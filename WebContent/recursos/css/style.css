@@ -1,0 +1,172 @@
+/* *{
+    margin: 0 auto;
+} */
+@font-face {
+    font-family: Hacked;
+    src: url(https://hackedfont.com/HACKED.ttf);
+}
+body{
+    /* box-shadow: 0 0 18px 10px rgba(0,0,0,0.8); */
+    /* position: fixed; */
+    /* background-image: url(../imagenes/omg.jpg) ; */
+}
+main{
+    
+    position: initial;
+    box-shadow: 0 0 18px 10px rgba(0,0,0,0.8);
+}
+.img{
+    /* top: 150px; */
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: -100;
+    background-image: url(../imagenes/omg.jpg) ;
+}
+header{
+    height: 180px;
+    padding: 15px 5px 15px 5px;
+    /* background-color: #abee5f; */
+    background-color: #d6ff75;
+    color: #000;
+    /*
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;     */
+}
+#titulo{
+    font-family: Hacked;
+    font-size: 5em;
+}
+.main{
+    background-color: aqua;
+    height: 300px;
+}
+aside{
+    background-color: #f4f4f4;
+    padding: 30px;
+    min-height: 600px;
+    /* box-shadow: 0 0 18px 10px rgba(0,0,0,0.8); */
+}
+#dfProductos input[type = text], #dfProductos input[type = number], #dfProductos select{
+    width: 100%;
+}
+/*#dfProductos input::-webkit-inner-spin-button, #dfProductos input::-webkit-outer-spin-button, #tDni::-webkit-outer-spin-button, #tDni::-webkit-inner-spin-button*/
+input[type= number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {
+
+    -webkit-appearance: none;
+}
+footer{
+    height: 150px;
+    background-color: rgb(49, 49, 49);
+}
+#dBlur{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;    
+    z-index: 1000;
+    background: rgba(0,0,0,0.8);
+    overflow: hidden;
+}
+#dLogin{
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 300px;
+    height: 600px;
+    background-color: whitesmoke;
+    
+}
+
+/*login*/
+    a{
+    text-decoration:none !important;
+    }
+    h1,h2,h3{
+        font-family: 'Kaushan Script', cursive;
+    }
+    .myform{
+        position: relative;
+        display: -ms-flexbox;
+        display: flex;
+        padding: 1rem;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        width: 100%;
+        pointer-events: auto;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid rgba(0,0,0,.2);
+        border-radius: 1.1rem;
+        outline: 0;
+        max-width: 500px;
+    }
+    .tx-tfm{
+    text-transform:uppercase;
+    }
+    .mybtn{
+    border-radius:50px;
+    }
+   
+    .login-or {
+    position: relative;
+    color: #aaa;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    }
+    .span-or {
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: -2px;
+    margin-left: -25px;
+    background-color: #fff;
+    width: 50px;
+    text-align: center;
+    }
+    .hr-or {
+    height: 1px;
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+    }
+    .google {
+    color:#666;
+    width:100%;
+    height:40px;
+    text-align:center;
+    outline:none;
+    border: 1px solid lightgrey;
+    }
+     form .error {
+    color: #ff0000;
+    }
+    #div-blur{
+        /*display:none;*/
+    }
+    #first{display:none;}
+    #second{display:none;}
+    #sign-cliente{display: none;}
+    aside{display:none;}
+
+/*fin del login */
+    #ventaCliente{
+        display:none;
+    }
+#dLogin{
+    
+}
+#bInitVenta{    
+    margin-top: 30px;
+}
+/*
+    clases:
+        *tx-tfm: Convierte el texto a mayusculas
+
+*/

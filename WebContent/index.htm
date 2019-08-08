@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="recursos/css/bootstrap.min.css">
+    <link rel="stylesheet" href="recursos/css/style.css">
+    <title>Ventas</title>
+</head>
+<body class="">    
+    <div class="img"></div>
+    <main class="container" style="padding: 0;">
+    <header class="">
+        <img src="recursos/imagenes/logo.png" width="150" height="150" style="margin: 0 3% 0 3%;float: left;">
+        <label for="" id="titulo">_SALES_System</label>
+    </header>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">            
+        <ul class="navbar-nav">
+            <li class="nav-item" style="display: block;"><a href="#" class="nav-link" onclick="inicio();">Inicio</a></li>   
+            <li class="nav-item" id="liCat" style="display: none"><a href="#" class="nav-link" onclick="categorias();">Categorias</a></li>                
+            <li class="nav-item" id="liPro" style="display: none"><a href="#" class="nav-link" onclick="productos();">Productos</a></li> 
+            <li class="nav-item" id="liUsu" style="display: none;"><a href="#" class="nav-link" onclick="showUsuarios()">Usuarios</a></li>                                       
+            <li class="nav-item" id="liRol" style="display: none;"><a href="#" class="nav-link" onclick="showRoles()">Roles</a></li>                                       
+            <li class="nav-item" id="liCli" style="display: none;"><a href="#" class="nav-link" onclick="showClientes()">Clientes</a></li>                                       
+            <li class="nav-item" id="liVen" style="display: none;"><a href="#" class="nav-link" onclick="showVentas()">Ventas</a></li>                                       
+            <li class="nav-item" id="liLog" style="display: block;"><a href="#" class="nav-link" onclick="showLogin()">Login</a></li>
+            <li class="nav-item" id="liLogout" style="display: none;"><a id="aLogout" href="#" class="nav-link">Log out</a></li>
+            
+        </ul>
+    </nav>
+    <aside id="aInicio" style="display: block;">
+        <label for="">Bienvenido</label>
+        <div class="input-group">
+            <input type="number" class="form-control">
+            <div class="input-group-append">
+                <button class="btn btn-outline-secondary" type="button">Button</button>
+            </div>
+        </div>
+    </aside>
+    <aside id="aCategorias">
+        <h2>Categorias</h2>
+        <div class="row">
+            <div class="col-lg-5">
+                <div class="form-group">
+                    <label for="">Nombre:</label><br>
+                    <input type="text" id="tNombre" class="form-control">
+                    <input type="hidden" name="id" id="id_categoria" value="0">
+                </div>
+                <div class="form-group">
+                    <button id="bEnviarCat" class="btn btn-primary">Enviar</button>
+                </div>
+            </div>
+            <div class="col-lg-7">
+                <table class="table table-borderless" id="tCategorias">                    
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Acción</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </aside>
+    <aside id="aProductos">
+        <div class="row">
+            <div id="dfProductos" class="col-lg-3">
+                <h2>Productos</h2>
+                <!-- <div class="input-group mb-3">
+                    <div class="input-group-pretend">
+                        <label class="input-group-text" for="sCategoria">Categorias</label>                        
+                    </div>
+                    <select name="" id="sCategoria">
+                        <option value="">---</option>
+                    </select>
+                </div> -->
+                <div class="form-group">
+                    <label for="">Categoria:</label><br>
+                    <select name="" id="sCategoria" style="position: relative; width:100%;" class="form-control">
+                        <option value="0">---</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="">Nombres:</label><br>
+                    <input type="text" id="tNombrePro" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="">Precio:</label><br>
+                    <input type="number" id="tPrecio" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="">Cantidad:</label><br>
+                    <input type="number" id="tCantidad" class="form-control">
+                    <input type="hidden" name="" id="id_producto" value="0"> 
+                </div>
+                <div class="form-group">
+                    <button id="bEnviarPro" class="btn btn-primary">Enviar</button>
+                </div>                
+            </div>
+            <div class="col-lg-9">
+                <table class="table table-borderless" id="tProductos">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Categoria</th>
+                            <th scope="col">Precio</th>
+                            <th scope="col">Cantidad</th>
+                            <th scope="col">Acción</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </aside>
+    <aside id="aUsuarios">
+        <h2>Usuarios</h2>
+    </aside>
+    <aside id="aRoles">
+        <h2>Roles</h2>
+    </aside>
+    <aside id="aClientes">
+        <h2>Clientes</h2>
+    </aside>
+    <aside id="aVentas">
+        <h2>Ventas</h2>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="form-group">
+                    <button id="bInitVenta" class="btn btn-block btn-primary ">Iniciar venta</button>
+                </div>
+                <div id="ventaCliente">
+                    <div class="form-group">
+                        <button id="bRegCli" class="btn btn-block btn-primary ">Registrar cliente</button>
+                    </div>
+                    <div class="form-group">
+                        <label for="">DNI del Cliente:</label>
+                        <div class="input-group">
+                            <input type="number" id="tDni" class="form-control" value="">
+                            <div class="input-group-append">
+                                <button class="btn btn-outline-secondary" type="button" onclick="validarDNI()"><i class="fas fa-search"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="">Tipo de documento:</label>
+                        <select name="" id="sTipoDoc" class="form-control">
+                            <option value="0">---</option>
+                            <option value="Boleta">Boleta</option>
+                            <option value="Factura">Factura</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="">Número de documento:</label>
+                        <input type="number" id="tNumDoc" class="form-control" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="">Producto:</label>
+                        <select id="sProductos" class="form-control">
+                            <option value="0">---</option>                            
+                        </select>                        
+                    </div>
+                    <div class="form-group">
+                        <label for="">Cantidad:</label>
+                        <input type="number" id="tCanPro" class="form-control">                            
+                        <input type="hidden" id="hiddenProducto" value="">
+                    </div>
+                    <div class="form-group">
+                        <button id="bAgrePro" class="btn btn-block btn-primary ">Agregar producto</button>
+                    </div>
+                    <div class="form-group">
+                        <button id="bConfVent" class="btn btn-block btn-primary ">Confirmar venta</button>
+                    </div>
+                    <div class="form-group">
+                        <button id="bCanVent" class="btn btn-block btn-danger" onclick="resetVenta()">Cancelar venta</button>
+                    </div>
+                </div>                
+            </div>
+            <div class="col-lg-6">
+                <table id="tableVentas" class="table table-borderless">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Producto</th>
+                            <th>Cantidad</th>
+                            <th>Precio</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+                <div class="form-group">
+                    <p>
+                        Precio total: <span id="spanPrecio"></span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <footer>
+        
+    </footer>
+    </main>
+    <div id='dBlur'>
+        <div  class="container" style=" position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);" id="div-blur">
+            <div class="row">
+                <div class="col-md-5 mx-auto">
+                <div id="first">
+                    <div class="myform form ">
+                         <div class="logo mb-3">
+                             <div class="col-md-12 text-center">
+                                <h1>Login</h1>
+                             </div>
+                        </div>
+                       <div>
+                               <div class="form-group">
+                                  <label for="">Usuario:</label>
+                                  <input type="text" name=""  class="form-control" id="logName"  placeholder="Ingresa usuario">
+                               </div>
+                               <div class="form-group">
+                                  <label for="">Contraseña:</label>
+                                  <input type="password" name="password" id="logPass"  class="form-control"  placeholder="Ingresa contraseña">
+                               </div>                               
+                               <div class="col-md-12 text-center ">
+                                  <button type="button" id="bLog" class=" btn btn-block mybtn btn-primary tx-tfm">Login</button>
+                               </div>                                                             
+                               <div class="form-group">
+                                  <p class="text-center">No tienes una cuenta? <a href="#" id="signup">Registrate aquí</a></p>
+                               </div>
+                               <div class="form-group">
+                                    <p class="text-center"><a href="#" class="backInicio">Volver a inicio</a></p>
+                               </div>
+                            </div>
+                     
+                    </div>
+                </div>
+                  <div id="second">
+                      <div class="myform form ">
+                            <div class="logo mb-3">
+                               <div class="col-md-12 text-center">
+                                  <h1 >Signup</h1>
+                               </div>
+                            </div>
+                            <div>
+                               <div class="form-group">
+                                  <label for="">Nombre de usuario:</label>
+                                  <input type="text"  name="" class="form-control" id="regName" placeholder="Ingresa tu nombre de usuario">
+                               </div>                               
+                               <div class="form-group">
+                                  <label for="">Password:</label>
+                                  <input type="password" name="password" id="regPass"  class="form-control" placeholder="ingresa tu contraseña">
+                               </div>
+                               <div class="form-group">
+                                    <label for="">Rol de usuario:</label><br>
+                                    <select name="" id="sRol" class="form-control">
+                                        <option value="0">---</option>
+                                    </select>
+                               </div>
+                               <div class="col-md-12 text-center mb-3">
+                                  <button type="button" id="bSign" class=" btn btn-block mybtn btn-primary tx-tfm">Registrar</button>
+                               </div>
+                               <div class="col-md-12 ">
+                                  <div class="form-group">
+                                     <p class="text-center"><a href="#" id="signin">Ya tienes una cuenta?</a></p>
+                                  </div>
+                               </div>
+                               <div class="form-group">
+                                <p class="text-center"><a href="#" class="backInicio">Volver a inicio</a></p>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                    <div id="sign-cliente">
+                        <div class="myform form">
+                            <div class="logo mb-3">
+                                <div class="col-md-12 text-center">
+                                   <h1 >Registrar cliente</h1>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="form-group">
+                                    <label for="">Nombre del cliente:</label>
+                                    <input type="text" id="tNameCli" class="form-control" value="">
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Dni del cliente:</label>
+                                    <input type="number" id="tDniCli" class="form-control" value="">
+                                </div>
+                                <div class="col-md-12 text-center mb-3">
+                                    <button type="button" id="bSignCli" class=" btn btn-block mybtn btn-primary tx-tfm">Registrar</button>
+                                </div>
+                                <div class="form-group">
+                                    <p class="text-center"><a href="#" class="backVenta">Volver a la venta</a></p>
+                                </div>
+                             </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+    </div>
+    <script src="recursos/js/jquery-3.4.0.min.js"></script>
+    <script src="recursos/js/bootstrap.min.js"></script>
+    <script src="recursos/js/bootbox.min.js"></script>
+    <script src="recursos/js/bootbox.locales.min.js"></script>
+    <script src="recursos/js/script.js"></script>
+</body>
+</html>
+
+
+
+
